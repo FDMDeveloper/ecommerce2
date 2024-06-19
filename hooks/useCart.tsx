@@ -182,7 +182,7 @@ export const CartContextProvider = (props: Props) => {
     handleSetPaymentIntent,
   };
 
-  return <CartContext.Provider value={value} {...props} />;
+  return <CartContextProvider value={value} {...props}></CartContextProvider>
 };
 
 export const useCart = () => {
