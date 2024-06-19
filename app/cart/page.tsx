@@ -3,8 +3,7 @@ import Container from "../components/Container";
 import CartClient from './CartClient';
 import { getCurrentUser } from "@/actions/getCurrentUser";
 
-// @ts-ignore
-export const static: "force-static";
+export const forceStaticRendering = 'force-static';
 
 const Cart = async() => {
 
