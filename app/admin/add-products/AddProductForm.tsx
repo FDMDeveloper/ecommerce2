@@ -177,19 +177,21 @@ const AddProductForm = () => {
   };
 
   const addImageToState = useCallback((value: ImageType) => {
+    console.log('Add image to state:', value);
     setImages((prev) => {
       if (!prev) {
         return [value];
       }
-
+  
       return [...prev, value];
     });
   }, []);
 
   const removeImageFromState = useCallback((value: ImageType) => {
+    console.log('Remove image from state:', value);
     setImages((prev) => {
       if (prev) {
-        const filteredImages = prev.filter((item) => item.color != value.color);
+        const filteredImages = prev.filter((item) => item.color!== value.color);
         return filteredImages;
       }
       return prev;
