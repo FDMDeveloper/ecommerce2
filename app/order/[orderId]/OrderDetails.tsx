@@ -1,4 +1,4 @@
-"use client";
+
 
 import Heading from "@/app/components/Heading";
 import Status from "@/app/components/Status";

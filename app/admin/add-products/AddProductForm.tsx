@@ -1,4 +1,3 @@
-'use client'
 
 import Heading from "@/app/components/Heading";
 import CustomCheckBox from "@/app/components/inputs/CustomCheckBox";

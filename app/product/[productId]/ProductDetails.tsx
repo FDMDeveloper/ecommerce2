@@ -1,4 +1,4 @@
-"use client";
+
 
 import React, { useCallback, useEffect, useState } from "react";
 import { Rating } from "@mui/material";

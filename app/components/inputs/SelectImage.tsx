@@ -1,4 +1,4 @@
-"use client";
+
 
 import { ImageType } from "@/app/admin/add-products/AddProductForm";
 import { useCallback } from "react";

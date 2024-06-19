@@ -1,4 +1,4 @@
-'use client'
+
 
 import { categories } from "@/utils/Categories";
 import Container from "../Container";

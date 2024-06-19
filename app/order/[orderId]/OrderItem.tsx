@@ -1,4 +1,4 @@
-"use client";
+
 
 import { formatPrice } from "@/utils/formatPrice";
 import { truncateText } from "@/utils/truncateText";
