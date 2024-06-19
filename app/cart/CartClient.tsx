@@ -1,4 +1,4 @@
-
+'use client'
 
 import { useCart } from "@/hooks/useCart";
 import Link from "next/link";

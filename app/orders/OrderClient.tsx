@@ -1,4 +1,4 @@
-
+'use client'
 
 import { Order, User } from "@prisma/client";
 import { DataGrid, GridColDef } from "@mui/x-data-grid";

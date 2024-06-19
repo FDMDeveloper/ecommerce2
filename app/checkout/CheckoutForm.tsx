@@ -1,4 +1,4 @@
-
+'use client'
 
 import { useCart } from "@/hooks/useCart";
 import { formatPrice } from "@/utils/formatPrice";

@@ -1,4 +1,4 @@
-
+'use client'
 
 import { Order, Product, User } from "@prisma/client";
 import { useEffect, useState } from "react";
