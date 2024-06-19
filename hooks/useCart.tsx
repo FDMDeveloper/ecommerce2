@@ -1,11 +1,11 @@
 import { CartProductType } from "@/app/product/[productId]/ProductDetails";
-import React, { useCallback, useContext, useEffect } from "react";
+import React, { useCallback, useContext, useEffect} from "react";
 import { createContext, useState } from "react";
 import { toast } from "react-hot-toast";
 
 type CartContextType = {
   id: string;
-  quantity: any;
+  quantity: number;
   cartTotalQty: number;
   cartTotalAmount: number;
   cartProducts: CartProductType[] | null;
@@ -31,13 +31,13 @@ export const CartContextProvider = (props: Props) => {
     null
   );
 
-  const [paymentIntent, setPaymentIntent] = useState<string | null>(null)
+  const [paymentIntent, setPaymentIntent] = useState<string | null>(null);
 
   useEffect(() => {
     const cartItems: any = localStorage.getItem("eShopCartItems");
     const cProducts: CartProductType[] | null = JSON.parse(cartItems);
-    const smarttechPaymentIntent:any = localStorage.getItem('smarttechPaymentIntent')
-    const paymentIntent: string | null = JSON.parse(smarttechPaymentIntent)
+    const smarttechPaymentIntent: any = localStorage.getItem("smarttechPaymentIntent");
+    const paymentIntent: string | null = JSON.parse(smarttechPaymentIntent);
 
     setCartProducts(cProducts);
     setPaymentIntent(paymentIntent);
@@ -46,7 +46,7 @@ export const CartContextProvider = (props: Props) => {
   useEffect(() => {
     const getTotals = () => {
       if (cartProducts) {
-        const { total, qty } = cartProducts?.reduce(
+        const { total, qty } = cartProducts.reduce(
           (acc, item) => {
             const itemTotal = item.price * item.quantity;
 
@@ -61,10 +61,11 @@ export const CartContextProvider = (props: Props) => {
           }
         );
 
-        setCartTotalQty(qty)
-        setCartTotalAmount(total)
+        setCartTotalQty(qty);
+        setCartTotalAmount(total);
       }
     };
+
     getTotals();
   }, [cartProducts]);
 
@@ -170,7 +171,7 @@ export const CartContextProvider = (props: Props) => {
   }, [paymentIntent])
 
   const value = {
-    cartTotalQty,
+    cartTotalQty, // Include all properties from CartContextType
     cartProducts,
     cartTotalAmount,
     handleAddProductToCart,
@@ -181,8 +182,9 @@ export const CartContextProvider = (props: Props) => {
     paymentIntent,
     handleSetPaymentIntent,
   };
+  return <CartContextProvider value={value} {...props}></CartContextProvider>
 
-  return <CartContext.Provider value={value} {...props} />;
+  
 };
 
 export const useCart = () => {
